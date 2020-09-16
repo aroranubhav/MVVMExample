@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVM-Example</string>
+    <string name="fetch_recipes">Fetch Recipes</string>
+</resources>
