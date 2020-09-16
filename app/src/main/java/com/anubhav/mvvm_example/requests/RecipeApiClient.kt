@@ -26,6 +26,7 @@ object RecipeApiClient {
                     val recipesList = response.body()?.recipes
                     recipes.postValue(recipesList)
                 } else {
+                    recipes.postValue(null)
                     Log.e(TAG, "onResponse: ${response.errorBody()?.toString()}")
                 }
             }

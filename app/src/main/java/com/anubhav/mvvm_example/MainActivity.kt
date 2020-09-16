@@ -23,14 +23,17 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
 
         observeData()
+
         btn_search.setOnClickListener {
             searchRecipes()
         }
     }
 
+    //observing for data changes.
     private fun observeData() {
         viewModel.getRecipes().observe(this, Observer { recipes ->
             recipes?.let {
+                //logging the fetched data for checking purpose
                 for (recipe in recipes) {
                     Log.d(TAG, "observeData: $recipe")
                 }
@@ -38,7 +41,9 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+
+    //calling with random query data from the api, for chicken as the query and a default page number
     private fun searchRecipes() {
-        viewModel.searchRecipe("chicken", 0)
+        viewModel.searchRecipe("sfjbjsdfsgfl", 0)
     }
 }
